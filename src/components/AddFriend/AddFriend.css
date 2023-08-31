@@ -1,0 +1,26 @@
+/* Friend Form Styles */
+.friend-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: var(--color-light);
+    border: 1px solid var(--color-primary);
+    border-radius: 5px;
+}
+
+.friend-form input {
+    padding: 10px;
+    border: 1px solid var(--color-secondary);
+    border-radius: 5px;
+}
+
+.friend-form button {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

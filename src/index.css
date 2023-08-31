@@ -1,13 +1,84 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Color Variables */
+:root {
+    --color-light: #d5cdc9;
+    --color-white: #fff;
+    --color-dark: #313e43;
+    --color-primary: #4f4f50;
+    --color-secondary: #788f7b;
+    --color-info: #e99414;
+    --color-success: #08ae66;
+    --color-warning: #e4ce07;
+    --color-danger: #f42003;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Global Styles */
+body {
+    background-color: var(--color-light);
+    color: var(--color-white);
+    font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+/* header {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 20px;
+} */
+
+/* Button Styles */
+button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Link Styles */
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+/* Info Message Styles */
+.info-message {
+    background-color: var(--color-info);
+    color: var(--color-white);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Danger Message Styles */
+.danger-message {
+    background-color: var(--color-danger);
+    color: var(--color-white);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Success Message Styles */
+.success-message {
+    background-color: var(--color-success);
+    color: var(--color-white);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Main Container Styles */
+.main-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--color-light);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.left-side {
+    width: auto;
 }

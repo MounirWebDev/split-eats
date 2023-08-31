@@ -1,0 +1,67 @@
+/* Friend List Styles */
+.friend-list {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: var(--color-light);
+    border: 1px solid var(--color-primary);
+    border-radius: 5px;
+    overflow-y: auto;
+}
+
+/* Friend Item Styles */
+.friend-item {
+    padding: 5px;
+    background-color: var(--color-primary);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: .8;
+}
+
+.friend-item:hover {
+    padding: 5px;
+    background-color: var(--color-primary);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 1;
+}
+
+.friend-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.friend-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.friend-name {
+    font-weight: bold;
+}
+
+.friend-balance-type1 {
+    color: var(--color-success);
+}
+
+.friend-balance-type2 {
+    color: var(--color-danger);
+}
+
+.friend-balance-type3 {
+    color: var(--color-info);
+}
+
+.friend-list button {
+    background-color: var(--color-secondary);
+}

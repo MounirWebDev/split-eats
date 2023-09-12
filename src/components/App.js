@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import FriendList from './FriendList/FriendList';
 import AddFriend from './AddFriend/AddFriend';
-import { useState } from 'react';
+import SplitBillForm from './splitBillForm/SplitBillForm';
 
 const initialFriends = [
     {
@@ -26,11 +27,19 @@ const initialFriends = [
 function App() {
     const [friendList, setFriendList] = useState(initialFriends);
     const [isClicked, setIsClicked] = useState(false);
+    const [selectedFriendID, setSelectedFriendID] = useState(null);
+    const [selectedFriendInfo] = friendList.filter((friend) =>
+        friend.id === selectedFriendID ? friend : null
+    );
 
     return (
         <div className="main-container">
             <div className="left-side">
-                <FriendList friendList={friendList} />
+                <FriendList
+                    friendList={friendList}
+                    onSelectedFriendID={setSelectedFriendID}
+                    selectedFriendID={selectedFriendID}
+                />
                 {isClicked ? (
                     <AddFriend
                         onAddFriend={setFriendList}
@@ -43,7 +52,13 @@ function App() {
                 )}
             </div>
             <div className="right-side">
-                a;ljkf;alkjf
+                {selectedFriendID && (
+                    <SplitBillForm
+                        selectedFriendInfo={selectedFriendInfo}
+                        setFriendList={setFriendList}
+                        key={selectedFriendID}
+                    />
+                )}
             </div>
         </div>
     );

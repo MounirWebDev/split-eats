@@ -1,11 +1,15 @@
 import './FriendList.css';
 
-
-function FriendList({friendList}) {
+function FriendList({ friendList, onSelectedFriendID, selectedFriendID }) {
     return (
         <div className="friend-list">
             {friendList.map((friend) => (
-                <FriendItem friend={friend} key={friend.id} />
+                <FriendItem
+                    friend={friend}
+                    key={friend.id}
+                    onSelectedFriendID={onSelectedFriendID}
+                    selectedFriendID={selectedFriendID}
+                />
             ))}
         </div>
     );
@@ -13,7 +17,7 @@ function FriendList({friendList}) {
 
 export default FriendList;
 
-function FriendItem({ friend }) {
+function FriendItem({ friend, onSelectedFriendID, selectedFriendID }) {
     let message = '';
     let type = '';
 
@@ -29,7 +33,11 @@ function FriendItem({ friend }) {
     }
 
     return (
-        <div className="friend-item">
+        <div
+            className={`friend-item ${
+                friend.id === selectedFriendID ? 'selected' : ''
+            }`}
+        >
             <img
                 src={friend.avatar}
                 alt={friend.name}
@@ -39,7 +47,16 @@ function FriendItem({ friend }) {
                 <div className="friend-name">{friend.name}</div>
                 <div className={`friend-balance-${type}`}>{message}</div>
             </div>
-            <button className="select-button">Select</button>
+            <button
+                className="select-button"
+                onClick={() =>
+                    onSelectedFriendID((preID) =>
+                        preID === friend.id ? null : friend.id
+                    )
+                }
+            >
+                Select
+            </button>
         </div>
     );
 }

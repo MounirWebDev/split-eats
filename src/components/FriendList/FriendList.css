@@ -20,16 +20,10 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    opacity: .8;
+    opacity: 0.8;
 }
 
 .friend-item:hover {
-    padding: 5px;
-    background-color: var(--color-primary);
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
     opacity: 1;
 }
 
@@ -64,4 +58,8 @@
 
 .friend-list button {
     background-color: var(--color-secondary);
+}
+
+.selected {
+    opacity: 1;
 }

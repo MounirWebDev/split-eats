@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/split-eats/static/css/main.61423e86.css",
+    "main.js": "/split-eats/static/js/main.fbf1aa70.js",
+    "index.html": "/split-eats/index.html",
+    "main.61423e86.css.map": "/split-eats/static/css/main.61423e86.css.map",
+    "main.fbf1aa70.js.map": "/split-eats/static/js/main.fbf1aa70.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.61423e86.css",
+    "static/js/main.fbf1aa70.js"
+  ]
+}

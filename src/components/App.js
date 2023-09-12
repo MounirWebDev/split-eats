@@ -56,6 +56,7 @@ function App() {
                     <SplitBillForm
                         selectedFriendInfo={selectedFriendInfo}
                         setFriendList={setFriendList}
+                        setSelectedFriendID={setSelectedFriendID}
                         key={selectedFriendID}
                     />
                 )}

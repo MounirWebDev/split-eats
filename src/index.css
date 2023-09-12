@@ -71,14 +71,32 @@ a {
 /* Main Container Styles */
 .main-container {
     max-width: 1440px;
+    height: 100vh;
     margin: 0 auto;
     padding: 20px;
     background-color: var(--color-light);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
 }
 
 .left-side {
     width: auto;
+}
+
+.right-side {
+    width: 50%;
+}
+
+@media screen and (max-width: 850px) {
+    .right-side{
+        width: 95%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+        /* display: none; */
+    }
 }

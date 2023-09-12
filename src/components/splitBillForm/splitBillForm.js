@@ -1,13 +1,31 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './SplitBillForm.css';
 
-function SplitBillForm({ selectedFriendInfo: { name, id }, setFriendList }) {
+function SplitBillForm({
+    selectedFriendInfo: { name, id },
+    setFriendList,
+    setSelectedFriendID,
+}) {
     const [billValue, setBillValue] = useState(0);
     const [myExpense, setMyExpense] = useState(0);
     // const [theirExpense, setTheirExpense] = useState(0);
     const [payer, setPayer] = useState('1');
+    const closeBtn = useRef(null);
+    // const btnEl = closeBtn.current;
+    const formEl = useRef(null);
 
     const theirExpense = billValue - myExpense;
+    // console.log(btnEl)
+    useEffect(() => {
+        closeBtn.current.addEventListener('click', handleCloseForm);
+        // return () =>
+        //     btnEl.removeEventListener('click', handleCloseForm);
+    }, []);
+
+    function handleCloseForm() {
+        formEl.current.style.display = 'none';
+        setSelectedFriendID(null)
+    }
 
     function handleSplitBill(e) {
         e.preventDefault();
@@ -47,9 +65,10 @@ function SplitBillForm({ selectedFriendInfo: { name, id }, setFriendList }) {
         setBillValue(0);
         setMyExpense(0);
         setPayer('1');
+        setSelectedFriendID(null);
     }
     return (
-        <form onSubmit={handleSplitBill}>
+        <form onSubmit={handleSplitBill} ref={formEl}>
             <h2>Split a bill with {name}</h2>
             <div>
                 <label>
@@ -87,6 +106,9 @@ function SplitBillForm({ selectedFriendInfo: { name, id }, setFriendList }) {
                 </select>
                 <button>Split bill</button>
             </div>
+            <button className="close" ref={closeBtn}>
+                &times;
+            </button>
         </form>
     );
 }

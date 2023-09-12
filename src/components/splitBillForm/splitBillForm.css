@@ -1,0 +1,69 @@
+/* Form Styles */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--color-light);
+    border: 1px solid var(--color-dark);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--color-dark);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--color-secondary);
+}
+
+input[type='number'],
+select {
+    display: block;
+    width: 300px;
+    padding: 10px;
+    border: 1px solid var(--color-dark);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent
+        url('https://tse2.mm.bing.net/th?id=OIP.YXhMN6Lia9SvoFwnd9UJBwHaHa&pid=Api&P=0&h=180')
+        no-repeat;
+    background-position: right center;
+} */
+
+button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: var(--color-secondary);
+}
+
+.close {
+    display: block;
+}
+
+@media screen and (max-width: 850px) {
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+}

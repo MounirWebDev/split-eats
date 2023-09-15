@@ -24,13 +24,13 @@ function SplitBillForm({
 
     function handleCloseForm() {
         formEl.current.style.display = 'none';
-        setSelectedFriendID(null)
+        setSelectedFriendID(null);
     }
 
     function handleSplitBill(e) {
         e.preventDefault();
 
-        if (billValue === 0) {
+        if (!billValue) {
             return;
         }
 
@@ -85,6 +85,8 @@ function SplitBillForm({
                         type="number"
                         value={myExpense}
                         onChange={(e) => setMyExpense(+e.target.value)}
+                        min={0}
+                        max={billValue}
                     />
                 </label>
                 <label>
@@ -92,7 +94,6 @@ function SplitBillForm({
                     <input
                         type="number"
                         value={theirExpense}
-                        // onChange={(e) => setTheirExpense(e.target.value)}
                         disabled={true}
                     />
                 </label>

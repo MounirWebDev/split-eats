@@ -53,10 +53,19 @@ button:hover {
 
 @media screen and (max-width: 850px) {
     .close {
-        display:block;
+        display: block;
         position: absolute;
         top: 10px;
         right: 10px;
     }
 }
 
+input.wrong {
+    border: 2px solid var(--color-danger);
+}
+
+.warningText {
+    color: var(--color-danger);
+    text-transform: none;
+    font-size: 13px;
+}

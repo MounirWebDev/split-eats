@@ -67,6 +67,8 @@ function SplitBillForm({
         setPayer('1');
         setSelectedFriendID(null);
     }
+
+    console.log(billValue < myExpense);
     return (
         <form onSubmit={handleSplitBill} ref={formEl}>
             <h2>Split a bill with {name}</h2>
@@ -87,15 +89,17 @@ function SplitBillForm({
                         onChange={(e) => setMyExpense(+e.target.value)}
                         min={0}
                         max={billValue}
+                        className={`${billValue < myExpense && 'wrong'}`}
                     />
+                    {billValue < myExpense && (
+                        <p className="warningText">
+                            Your expense value is grater than the bill value!
+                        </p>
+                    )}
                 </label>
                 <label>
                     {name}'s expense
-                    <input
-                        type="number"
-                        value={theirExpense}
-                        disabled={true}
-                    />
+                    <input type="number" value={theirExpense} disabled={true} />
                 </label>
                 <label>Who is paying the bill?</label>
                 <select
@@ -105,7 +109,7 @@ function SplitBillForm({
                     <option value="1">You</option>
                     <option value="2">{name}</option>
                 </select>
-                <button>Split bill</button>
+                <button disabled={billValue < myExpense}>Split bill</button>
             </div>
             <button className="close" ref={closeBtn}>
                 &times;
